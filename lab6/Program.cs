@@ -31,6 +31,11 @@ namespace lab6
                 Console.WriteLine("Student HashCode");
                 return HashCode.Combine(Name, Ects);
             }
+
+            public override string ToString()
+            {
+                return $"Name = (Name), Ects = (Ects)";
+            }
         }
         static void Main(string[] args)
         {
@@ -104,7 +109,19 @@ namespace lab6
             phoneBook[list[0]] = "232323232";
             phoneBook[list[1]] = "343434343";
             phoneBook[list[2]] = "454545454";
-            phoneBook[list[3]] = "656565656";
+            
+            Console.WriteLine(phoneBook.Keys);
+            if (phoneBook.ContainsKey(new Student() { Name = "Ewa", Ects = 23 })) 
+            {
+                Console.WriteLine("Jest numer telefonu!");
+            } else
+            {
+                Console.WriteLine("Brak numeru telefonu.");
+            }
+            foreach(var item in phoneBook)
+            {
+                Console.WriteLine(item.Key + " " + item.Value);
+            }
         }
     }
 }
