@@ -122,6 +122,25 @@ namespace lab6
             {
                 Console.WriteLine(item.Key + " " + item.Value);
             }
+            string[] arr = { "adam", "ewa", "mariusz", "julka", "adam", "ewa" };
+
+            Dictionary<string, int> counters = new Dictionary<string, int>();
+            foreach(string name in arr)
+            {
+                if (counters.ContainsKey(name))
+                {
+                    counters[name] += 1;
+
+                }else
+                {
+                    counters.Add(name, 1);
+                }
+            }
+            foreach (var item in counters)
+            {
+                Console.WriteLine(item.Key + " występuje " + item.Value);
+            }
+
         }
     }
 }
